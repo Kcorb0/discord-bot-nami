@@ -3,6 +3,7 @@ from discord.ext import commands
 import random
 
 class Communicate(commands.Cog):
+	"""Some funny communication commands with the bot and other members of the server"""
 
 	def __init__(self, client):
 		self.client = client
@@ -11,7 +12,7 @@ class Communicate(commands.Cog):
 	async def greet_miku(self, ctx):
 		sender = str(ctx.message.author)[:-5]
 
-		responses = ['Ossu!', 'Hihi :3', '*Purrs*', '*Jumps* oh hewo master {}, you stawtled me X3'.format(sender)]
+		responses = ['Ossu!', 'Moshi Moshi :3', '*Purrs*', '*Jumps* oh hello master {} X3'.format(sender), 'Kon\'nichiwa', 'Ohayou gozaimasu o.0']
 		await ctx.send(random.choice(responses))
 
 	@commands.command(aliases=['night_miku', 'goodnight_miku', 'night_cat'])
@@ -33,14 +34,14 @@ class Communicate(commands.Cog):
 
 		else:
 			responses = ['*Miku obeys master {0}, proceeds to scratch {1} down to the bone.* \n*{1} is dead.* \nMiku crawls back and sits on {0}\'s lap.*'.format(sender, target),
-						'*Strikes {0}* nyanyanaynyanya. \n*Takes a shit on {0} and walks away*'.format(target),
+						'*Strikes {0}* nyanyanaynyanya. \n*Poops on {0} and walks away*'.format(target),
 						'UwU...... 0w0 HAKAAAAIIIIIIIIIII.\n*{0} Dies.*'.format(target)]
 			await ctx.send(random.choice(responses))
 
 	@commands.command(aliases=['pet', 'poke', 'kiss', 'stroke_cat', 'pet_cat', 'poke_cat', 'kiss_cat', 'make_happy'])
 	async def stroke(self, ctx):
 		sender = str(ctx.message.author)[:-5]
-		responses = ['*Purrs*', 'UwU Harder please *Blushes*', '*Cums*', '*Runs away*', 'WTF?', 'Hey i have a boyfriend >.<', '*Blushes*', 'Licks {}\'s, buthole'.format(sender), "You perv eeeeek!", "EW! Get away from me >.<", "Hewp me someone, {} is trying to touch me.".format(sender)]
+		responses = ['*Purrs*', 'UwU Harder please *Blushes*', '*Dabs, proceeds to then yeet.*', '*Runs away*', 'WTF?', 'Hey i have a boyfriend >.<', '*Blushes*', 'Licks {}\'s, buthole'.format(sender), "You perv eeeeek!", "EW! Get away from me >.<", "Hewp me someone, {} is trying to touch me.".format(sender)]
 		await ctx.send(random.choice(responses))
 
 	@commands.command()
@@ -54,9 +55,6 @@ class Communicate(commands.Cog):
 		responses = ["*Miku takes {0} from {1}.* Thank you :3".format(food, sender), "*Miku denies the {0} from {1}*, get that away from me >.<".format(food, sender)]
 		await ctx.send(random.choice(responses))
 
-	@commands.command()
-	async def sleep_miku(self, ctx):
-	    await ctx.bot.logout()
 
 def setup(client):
 	client.add_cog(Communicate(client))
