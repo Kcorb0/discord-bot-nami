@@ -9,7 +9,7 @@ class Games(commands.Cog):
 		self.client = client
 		
 	@commands.command()
-	async def coin_flip(self, ctx, opponent, side, times=1):
+	async def coin_flip(self, ctx, opponent, side, amnt=1):
 		sender = str(ctx.message.author)[:-5]
 
 		sides = ["heads", "tails"]
@@ -19,8 +19,9 @@ class Games(commands.Cog):
 		flip = choice(["heads", "tails"])
 
 		await ctx.send(f"{sender} challenges {opponent} to a coinflip taking {side}.")
-		await ctx.send(f"*Miku flips coin {times} time(s)*, it lands on {flip}.")
-		
+		await ctx.send(f"*Miku flips coin*, it lands on {flip}.")
+
+
 		if player1 == flip:
 			await ctx.send(f"{sender} wins >.<")
 		else:

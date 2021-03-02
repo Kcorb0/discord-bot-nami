@@ -6,7 +6,7 @@ import random
 
 logging.basicConfig(level=logging.INFO)
 client = commands.Bot(command_prefix = '$')
-token = ""
+token = "ODE0OTA5Mzk4MDMxNzk0MjU2.YDkthA.ZwLYoCBxt-GtbJm_8pIwWdNEZvc"
 
 
 # On bot startup events
@@ -44,7 +44,7 @@ for filename in os.listdir("./cogs"):
 @client.event
 async def on_message(message):
 	profanity = ['dick', 'shit', 'fuck', 'crap', 'wanker', 'tosser', 'bollocks', 'cock', 'fuck',
-				'cunt', 'stupid', 'toss', 'retard', 'fudge', 'crud', 'silly', 'bitch']
+				'cunt', 'stupid', 'toss', 'retard', 'crud', 'silly', 'bitch']
 
 	for w in profanity:
 		if w in message.content.lower():

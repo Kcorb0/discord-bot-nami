@@ -12,7 +12,7 @@ class Communicate(commands.Cog):
 	async def greet_miku(self, ctx):
 		sender = str(ctx.message.author)[:-5]
 
-		responses = ['Ossu!', 'Moshi Moshi :3', '*Purrs*', '*Jumps* oh hello master {} X3'.format(sender), 'Kon\'nichiwa', 'Ohayou gozaimasu o.0']
+		responses = ['Ossu!', 'Moshi Moshi :3', '*Purrs*', '*Jumps* oh hello master {} X3'.format(sender), 'Kon\'nichiwa', 'Ohayou gozaimasu o.0', ':cat:']
 		await ctx.send(random.choice(responses))
 
 	@commands.command(aliases=['night_miku', 'goodnight_miku', 'night_cat'])
