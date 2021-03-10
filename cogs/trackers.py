@@ -49,12 +49,19 @@ class LolTracker:
 	def __init__(self, player):
 		self.player = player
 
-	def lol_rank(player):
-		html_text = requests.get('https://lolprofile.net/summoner/euw/{}#update'.format(player)).text
+	def lol_rank(self):
+		html_text = requests.get('https://lolprofile.net/summoner/euw/{}#update'.format(self.player)).text
 		soup = BeautifulSoup(html_text, 'lxml')
 		rank = soup.find('div', class_='s-c cf tab1').find('div', class_='s-cl').find('span', class_='tier').text
-
 		return str(rank)
+
+	def lol_games(self):
+		html_text = requests.get('https://lolprofile.net/summoner/euw/{}#update'.format(self.player)).text
+		soup = BeautifulSoup(html_text, 'lxml')
+		wins = (soup.find('div', class_='s-rs-info').find('span', class_='win-txt').text).split(" ")[0]
+		loss = (soup.find('div', class_='s-rs-info').find('span', class_='lose-txt').text).split(" ")[0]
+
+		return f"Wins: {wins} Losses: {loss} Total: {int(loss)+int(wins)}"
 
 
 class TrackCommands(commands.Cog):
@@ -101,10 +108,23 @@ class TrackCommands(commands.Cog):
 	@commands.command()
 	async def lol_rank(self, ctx, player):
 		try:
-			await ctx.send("Getting rank for {} ^.^\nRank: {}".format(player, LolTracker.lol_rank(player.lower())))
+			await ctx.send("Getting rank for {} ^.^\nRank: {}".format(player, LolTracker(player.lower()).lol_rank()))
+		except:
+			await ctx.send("I can't find that player >.<")
+
+	@commands.command()
+	async def lol_games(self, ctx, player):
+		try:
+			await ctx.send(f"Getting total games played for {player} ^.^")
+			await ctx.send(LolTracker(player.lower()).lol_games())
+			await ctx.send("Woweeeee, and you are still silver XD oooofies")
 		except:
 			await ctx.send("I can't find that player >.<")
 
 
 def setup(client):
 	client.add_cog(TrackCommands(client))
+
+if __name__ == "__main__":
+	print(LolTracker('JNKYY').lol_rank())
+	print(LolTracker('JNKYY').lol_games())
