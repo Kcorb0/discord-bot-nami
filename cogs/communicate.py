@@ -17,6 +17,13 @@ class Communicate(commands.Cog):
             sender), 'Kon\'nichiwa', 'Ohayou gozaimasu o.0', ':cat:']
         await ctx.send(random.choice(responses))
 
+    @commands.command(aliases=['party_time'])
+    async def party(self, ctx):
+        sender = str(ctx.message.author)[:-5]
+
+        responses = ['P P Partee time!', 'UwU time for party', 'Bois will now commence in darnce or die']
+        await ctx.send(random.choice(responses))
+
     @commands.command(aliases=['night_miku', 'goodnight_miku', 'night_cat'])
     async def night(self, ctx):
         sender = str(ctx.message.author)[:-5]
@@ -60,6 +67,16 @@ class Communicate(commands.Cog):
         responses = ["*Miku takes {0} from {1}.* Thank you :3".format(
             food, sender), "*Miku denies the {0} from {1}*, get that away from me >.<".format(food, sender)]
         await ctx.send(random.choice(responses))
+
+    @commands.command()
+    async def join(self, ctx):
+        channel = ctx.author.voice.channel
+        await channel.connect()
+
+    @commands.command()
+    async def leave(self, ctx):
+        channel = ctx.author.voice.channel
+        await ctx.voice_client.disconnect()
 
 
 def setup(client):

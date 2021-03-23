@@ -6,11 +6,11 @@ import random
 
 logging.basicConfig(level=logging.INFO)
 client = commands.Bot(command_prefix='$')
-token = ""
+token = "ODE0OTA5Mzk4MDMxNzk0MjU2.YDkthA.7GA5e_1oISkYhK8WOdhHzOm7-j0"
 
 
 # On bot startup events
-@client.event
+@client.event 
 async def on_ready():
     activities = ['League of Legends', 'Valheim', 'Minecraft', 'Doom',
                   'Catgirl Sim', 'Sims 3', 'Netflix', 'Escape from Tarkov', 'Funimation']
