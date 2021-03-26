@@ -59,7 +59,12 @@ class Communicate(commands.Cog):
     @commands.command()
     async def summon(self, ctx):
         sender = str(ctx.message.author)[:-5]
-        await ctx.send("Come on {0} it's time, {1} wants to play some games UwU.".format(ctx.message.guild.default_role, sender))
+        responses = [
+        "Come on {0} it's time, {1} wants to play some games UwU.".format(ctx.message.guild.default_role, sender), 
+        "What's good {0} it's time for hardcore gaming and cheek slappin. >.<".format(ctx.message.guild.default_role), 
+        "{0} has requested that {1} must attend the ceremonial gathering of the bois. UwU".format(sender, ctx.message.guild.default_role)]
+
+        await ctx.send(random.choice(responses))
 
     @commands.command(aliases=['give', 'feed_cat', 'give_miku', 'feed_miku'])
     async def feed(self, ctx, *, food):

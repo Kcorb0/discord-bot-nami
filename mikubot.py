@@ -6,7 +6,7 @@ import random
 
 logging.basicConfig(level=logging.INFO)
 client = commands.Bot(command_prefix='$')
-token = "ODE0OTA5Mzk4MDMxNzk0MjU2.YDkthA.7GA5e_1oISkYhK8WOdhHzOm7-j0"
+token = "ODE0OTA5Mzk4MDMxNzk0MjU2.YDkthA.JVL8X3zAN1eFaZ0yy27pHyRwXOo"
 
 
 # On bot startup events
