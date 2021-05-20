@@ -17,6 +17,7 @@ async def on_ready():
         "League of Legends",
         "Valheim",
         "Minecraft",
+        "XVideos",
         "Doom",
         "Catgirl Sim",
         "Sims 3",
