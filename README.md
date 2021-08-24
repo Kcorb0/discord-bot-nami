@@ -19,7 +19,7 @@
   lol_games  
   lol_rank   
 ### No Category:
-  help       Shows this message<br>
-  load       live load new cogs without deactivating the bot<br>
+  help<br>
+  load<br>
   reload<br>
   unload<br>
