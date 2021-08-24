@@ -1,5 +1,5 @@
--Miku Discord Bot Commands-
-Communicate:
+#### Miku Discord Bot Commands
+### Communicate:
   feed       
   greet_nami 
   join       
@@ -8,9 +8,9 @@ Communicate:
   night      
   party      
   summon     
-Games:
+### Games:
   coin_flip  
-TrackCommands:
+### TrackCommands:
   c_cap      
   c_change   
   c_info     
@@ -18,7 +18,7 @@ TrackCommands:
   c_vol      
   lol_games  
   lol_rank   
-​No Category:
+### No Category:
   help       Shows this message
   load       live load new cogs without deactivating the bot
   reload     
