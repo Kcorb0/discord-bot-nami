@@ -20,12 +20,12 @@ class Games(commands.Cog):
         flip = choice(["heads", "tails"])
 
         await ctx.send(f"{sender} challenges {opponent} to a coinflip taking {side}.")
-        await ctx.send(f"*Miku flips coin*, it lands on {flip}.")
+        await ctx.send(f"*Nami flips coin*, it lands on {flip}.")
 
         if player1 == flip:
-            await ctx.send(f"{sender} wins >.<")
+            await ctx.send(f"{sender} wins.")
         else:
-            await ctx.send(f"{opponent} wins >.<")
+            await ctx.send(f"{opponent} wins.")
 
 
 def setup(client):

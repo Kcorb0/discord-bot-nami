@@ -7,7 +7,7 @@ import json
 
 logging.basicConfig(level=logging.INFO)
 client = commands.Bot(command_prefix="$")
-token = ""
+token = "ODE0OTA5Mzk4MDMxNzk0MjU2.YDkthA.zvjjq9efP-j8YucpTiCXfZzeCVQ"
 
 
 # On bot startup events
@@ -17,15 +17,12 @@ async def on_ready():
         "League of Legends",
         "Valheim",
         "Minecraft",
-        "XVideos",
         "Doom",
-        "Catgirl Sim",
         "Sims 3",
         "Netflix",
         "Escape from Tarkov",
         "Funimation",
         "FFXIV",
-        "Twitch hot-tub stream",
         "consecutive backflips",
         "Grand Theft Auto V",
         "Rocket League",
@@ -35,7 +32,6 @@ async def on_ready():
         "Dark Souls 2",
         "Dark Souls",
         "Demon Souls",
-        "Gym-Gluteus Day",
     ]
     await client.change_presence(activity=discord.Game(random.choice(activities)))
     print("{0.user} online".format(client))
@@ -68,31 +64,17 @@ for filename in os.listdir("./cogs"):
 
 
 # User leveling system
-@client.event()
-async def on_message(message):
-    with open("users.json", "r") as jfile:
-        users = json.load(jfile)
-
-    # Leveling experience
-    # 10 EXP per message, 30 EXP per Gif
-    # Level calcualation 100*(curlvl)
-
-    with open("users.json", "w") as jfile:
-        json.dump(jfile)
-
-
-# Profanity detection
-# @client.event
+# @client.event()
 # async def on_message(message):
-#    profanity = ['dick', 'shit', 'fuck', 'crap', 'wanker', 'tosser', 'bollocks', 'cock', 'fuck',
-#                 'cunt', 'stupid', 'toss', 'retard', 'crud', 'silly', 'bitch']
+#    with open("users.json", "r") as jfile:
+#        users = json.load(jfile)
 
-#    for w in profanity:
-#        if w in message.content.lower():
-#            responses = [
-#                "That's mean >.<", "Don't use such mean words 0_0", "Fudge you for saying that!"]
-#            await message.channel.send(random.choice(responses))
-#            break
-#    await client.process_commands(message)
+# Leveling experience
+# 10 EXP per message, 30 EXP per Gif
+# Level calcualation 100*(curlvl)
+
+#    with open("users.json", "w") as jfile:
+#        json.dump(jfile)
+
 
 client.run(token)
