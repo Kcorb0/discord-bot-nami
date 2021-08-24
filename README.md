@@ -1,4 +1,4 @@
-# Miku Discord Bot Commands
+# Discord Bot Commands
 ### Communicate:
   feed       
   greet_nami 
