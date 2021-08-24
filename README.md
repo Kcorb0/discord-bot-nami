@@ -1,7 +1,7 @@
 # Discord Bot Commands
 ### Communicate:
   feed       
-  greet_nami 
+  greet_nami<br>
   join       
   kill       
   leave      
